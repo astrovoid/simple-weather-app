@@ -1,0 +1,13 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+    height: 100%;
+    background-image: linear-gradient(to bottom, #0c2853, #005386, #0081a0, #00ad98, #38d676);
+    overflow: hidden;
+}

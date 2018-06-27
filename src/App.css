@@ -1,0 +1,81 @@
+.App {
+    margin: 50px auto;
+    max-width: 960px;
+
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);   
+}
+
+.header {
+    padding: 20px;
+    margin-bottom:15px;
+
+    background: #16aef4;
+
+    color: #fff;
+}
+
+.main {
+    padding-bottom: 20px;
+}
+
+.city-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.cities-list-item {
+    position: relative;
+    padding-right: 50px;
+
+    cursor: pointer;
+}
+
+.cities-list-item:hover {
+    background: #f7f7f7;
+}
+
+
+.delete-list-item {
+    position: absolute;
+
+    top: 15%;
+    right: 10px;
+}
+
+.weather-view {
+    position: relative;
+}
+
+.weather-view-group {
+    display: flex;
+    align-items: center;
+}
+
+.weather-view-group span {
+    margin-left: 3px;
+}
+
+.weather-btn-group {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.weather-btn-group .btn {
+    color: #fff;
+    padding: 5px 5px 0 5px;
+}
+
+.cities-list-item {
+    padding: 0;
+}
+
+.cities-list-item .city-name {
+    width: 100%;
+    height: 100%;
+
+    padding: 0.75rem 1.25rem;
+}
