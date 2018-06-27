@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import api from '../config/config';
+import api from '../config/api';
 class Store {
     @observable fetchCity = {
         error: '',
