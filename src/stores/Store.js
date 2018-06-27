@@ -39,6 +39,7 @@ class Store {
                     this.activeCity = json;
                     this.fetchCity.status = 'Success';
                     localStorage.setItem('lastActiveCity', JSON.stringify(this.activeCity));
+                    
                     break;
                 case (400):
                     this.fetchCity.error = 'Incorrect request';
@@ -48,6 +49,7 @@ class Store {
                     this.fetchCity.error = 'Something went wrong';
                     this.fetchCity.status = 'Failure';
             }
+            console.log(this.fetchCity.error)
         } catch (err) {
             throw err;
         }

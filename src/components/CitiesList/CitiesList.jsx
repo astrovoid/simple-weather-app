@@ -2,15 +2,17 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 
 import CitiesListItem from '../CitiesListItem/CitiesListItem';
+import { PropTypes as mobxPropTypes } from "mobx-react";
 
 const CitiesList = inject('Store')(observer(({ Store }) => {
+    const citiesList = Store.citiesList;
 
     return (
         <div>
             <h4>List of cities</h4>
-            { Store.citiesList.length > 0 ? 
+            { citiesList.length > 0 ? 
              <ul className="list-group">
-                {Store.citiesList.map((item) =>
+                {citiesList.map((item) =>
                     <CitiesListItem
                         key={item.id}
                         id={item.id}
@@ -25,5 +27,9 @@ const CitiesList = inject('Store')(observer(({ Store }) => {
         </div>
     );
 }));
+
+CitiesList.propTypes = { 
+    Store: mobxPropTypes.observableObject,
+}
 
 export default CitiesList;

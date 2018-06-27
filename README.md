@@ -1,10 +1,16 @@
 # Weather App
 
-## Sandbox
-(https://codesandbox.io/s/github/astrovoid/simple-weather-app)
+### How to start
 
-## Libs 
+* Clone this repo
+* npm install to install all req'd dependencies
+* npm start to start the local server (this project uses create-react-app)
+
+### Sandbox
+https://codesandbox.io/s/github/astrovoid/simple-weather-app
+
+### Libs 
 * React + Mobx
 
-## Used API
-(https://openweathermap.org/)
+### Used API
+https://openweathermap.org/

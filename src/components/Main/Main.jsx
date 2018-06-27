@@ -9,7 +9,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import { observer, inject } from 'mobx-react';
 
 const Main = inject('Store')(observer(({ Store }) => {
-    let activeCity = Store.activeCity;
+    let activeCity = Store.activeCity,
+        errorOnRequest = Store.fetchCity.error,
+        fetchCityWeather = Store.fetchCityWeather;
     
     return (
         <div className="main">
@@ -17,9 +19,12 @@ const Main = inject('Store')(observer(({ Store }) => {
                 <div className="row">
                     <div className="col-8">
                         <div className="search-bar">
-                            <Search />
+                            <Search 
+                                errorOnRequest={errorOnRequest}
+                                fetchCityWeather={fetchCityWeather}
+                            />
                         </div>
-                        <div>
+                        <div className="main-content">
                             {Store.fetchCity.status === 'Loading' ?
                                 <CircularProgress />
                                 : Store.fetchCity.status === 'Success' && Store.activeCity ?
@@ -27,7 +32,7 @@ const Main = inject('Store')(observer(({ Store }) => {
                                         name={activeCity.name}
                                         wind={activeCity.wind}
                                         coord={activeCity.coord}
-                                        sys={activeCity.sys}
+                                        country={activeCity.sys.country}
                                         humidity={activeCity.main.humidity}
                                         pressure={activeCity.main.pressure}
                                         temperature={activeCity.main.temp}

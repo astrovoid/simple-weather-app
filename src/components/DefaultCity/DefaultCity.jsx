@@ -13,7 +13,7 @@ const DefaultCity = inject('Store')(observer(({ Store }) => {
                     name={defaultCity.name}
                     wind={defaultCity.wind}
                     coord={defaultCity.coord}
-                    sys={defaultCity.sys}
+                    country={defaultCity.sys.country}
                     humidity={defaultCity.main.humidity}
                     pressure={defaultCity.main.pressure}
                     temperature={defaultCity.main.temp}

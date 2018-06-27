@@ -79,3 +79,13 @@
 
     padding: 0.75rem 1.25rem;
 }
+
+.request-error {
+    color: red;
+    padding: 5px;
+    
+}
+
+.main-content {
+    margin-top: 15px;
+}

@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const WeatherView = (props) => {
     const {
         name,
         coord,
         wind,
-        sys,
+        country,
         humidity,
         pressure,
         temperature
@@ -18,7 +19,7 @@ const WeatherView = (props) => {
                     <i className="material-icons">
                         location_city
                     </i>
-                    {name}, {sys.country}
+                    {name}, {country}
                 </h3>
             </div>
             <div className="weather-view-group">
@@ -81,6 +82,17 @@ const WeatherView = (props) => {
         </div>
     );
 };
+
+WeatherView.propTypes = {
+    name: PropTypes.string.isRequired,
+    coord: PropTypes.object.isRequired,
+    wind: PropTypes.object.isRequired,
+    country: PropTypes.string.isRequired,
+    humidity: PropTypes.number.isRequired,
+    pressure: PropTypes.number.isRequired,
+    temperature: PropTypes.number.isRequired,
+    children: PropTypes.any
+}
 
 export default WeatherView;
 

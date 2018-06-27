@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const CitiesListItem = (props) => {
     const {
@@ -15,5 +16,13 @@ const CitiesListItem = (props) => {
         </li>
     );
 };
+
+CitiesListItem.propTypes = { 
+    name: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    deleteCityFromList: PropTypes.func.isRequired,
+    showCityWeather: PropTypes.func.isRequired
+}
+
 
 export default CitiesListItem;
