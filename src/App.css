@@ -89,3 +89,11 @@
 .main-content {
     margin-top: 15px;
 }
+
+.aside-block {
+    margin-bottom: 25px;
+}
+
+.aside-block:last-child {
+    margin-bottom: 0;
+}

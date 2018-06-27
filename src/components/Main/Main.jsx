@@ -5,7 +5,8 @@ import WeatherView from '../WeatherView/WeatherView';
 import CitiesList from '../CitiesList/CitiesList';
 import DefaultCity from '../DefaultCity/DefaultCity';
 
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Loader from '../../components/common/Loader/Loader';
+
 import { observer, inject } from 'mobx-react';
 
 const Main = inject('Store')(observer(({ Store }) => {
@@ -26,7 +27,7 @@ const Main = inject('Store')(observer(({ Store }) => {
                         </div>
                         <div className="main-content">
                             {Store.fetchCity.status === 'Loading' ?
-                                <CircularProgress />
+                                <Loader />
                                 : Store.fetchCity.status === 'Success' && Store.activeCity ?
                                     <WeatherView
                                         name={activeCity.name}
@@ -52,8 +53,12 @@ const Main = inject('Store')(observer(({ Store }) => {
                         </div>
                     </div>
                     <div className="col-4">
-                        <DefaultCity/>
-                        <CitiesList/>
+                        <div className="aside-block">
+                            <DefaultCity/>
+                        </div>
+                        <div className="aside-block">   
+                            <CitiesList/>
+                        </div>
                     </div>
                 </div>
             </div>

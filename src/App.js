@@ -10,7 +10,6 @@ import Store from './stores/Store';
 const stores = { Store };
 
 class App extends Component {
-
     render() {
         return (
             <Provider {...stores}>
