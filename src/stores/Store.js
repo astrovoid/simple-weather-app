@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-
+import api from '../config/config';
 class Store {
     @observable fetchCity = {
         error: '',
@@ -25,7 +25,7 @@ class Store {
         this.fetchCity.status = 'Loading';
 
         try {
-            let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=44aae4fd0b5b011ec0232cf019f083c6`);
+            let response = await fetch(`${api.URL}q=${city}&units=${api.metric}&appid=${api.API_KEY}`);
             let json = await response.json();
 
             let responseCode = +json.cod;
@@ -66,7 +66,7 @@ class Store {
         if (this.defaultCity) {
             try {
                 let city = this.defaultCity.name;
-                let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=44aae4fd0b5b011ec0232cf019f083c6`);
+                let response = await fetch(`${api.URL}q=${city}&units=${api.metric}&appid=${api.API_KEY}`);
                 let json = await response.json();
 
                 let responseCode = +json.cod;
